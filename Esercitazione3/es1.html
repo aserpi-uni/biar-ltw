@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Ese2.es1</title>
+</head>
+<body>
+<form title="form" action="" method="post" name="registrazione">
+    <p>
+        Cognome
+        <br>
+        <input type="text" maxlength="40" size="40" placeholder="Cognome" required>
+        <br><br>
+
+        Nome
+        <br>
+        <input type="text" maxlength="30" size="30" placeholder="Nome" required>
+        <br><br>
+
+        Matricola
+        <br>
+        <input type="number" maxlength="7" size="7" placeholder="Matricola" min="0" max="1234567">
+        <br><br>
+
+        Regione
+        <br>
+        <select title="Regione" required>
+            <option value=""></option>
+            <option value="1">Regione1</option>
+            <option value="2">Regione2</option>
+            <option value="3">Regione3</option>
+            <option value="4">Regione4</option>
+        </select>
+        <br><br>
+
+        email
+        <br>
+        <input type="email" maxlength="30" size="30" placeholder="email">
+        <br><br>
+
+        Telefono
+        <br>
+        <input type="tel" maxlength="16" size="16" placeholder="Telefono" pattern="[0-9]{1,}">
+        <br><br>
+
+        Status
+        <br>
+        <input type="text" placeholder="Status" autocomplete="on" list="statusList">
+        <datalist id="statusList">
+            <option value="in corso"></option>
+            <option value="fuori corso"></option>
+            <option value="ripetente"></option>
+            <option value="part-time"></option>
+        </datalist>
+        <br><br>
+
+        Richieste particolari
+        <br>
+        <textarea cols="60" rows="12" placeholder="Note"></textarea>
+        <br><br>
+
+
+        <input type="submit" value="Invia">
+        <input type="reset" value="Reset">
+    </p>
+</form>
+</body>
+</html>
