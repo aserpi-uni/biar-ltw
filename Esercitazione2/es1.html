@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ese2.es1</title>
+    <script type="text/javascript" language="javascript">
+        function validaForm() {
+            var res = document.registr.cognome.value != "" &&
+                    document.registr.nome.value != "" &&
+                    document.registr.matricola.value != "" &&
+                    !isNaN(document.registr.matricola.value) &&
+                    document.registr.regione.value != "" &&
+                    document.registr.email.value != "" &&
+                    document.registr.tel.value != "";
+            if (!res) alert("Dati non inseriti correttamente");
+            return res;
+        }
+    </script>
+</head>
+<body>
+<form name="registr" method="post" action="" onsubmit="return validaForm();">
+    <p> Cognome
+        <br>
+        <input name="cognome" type="text" maxlength="40" size="40" placeholder="Cognome">
+        <br><br>
+
+        Nome
+        <br>
+        <input name="nome" type="text" maxlength="30" size="30" placeholder="Nome">
+        <br><br>
+
+        Matricola
+        <br>
+        <input name="matricola" type="number" maxlength="12" size="12" placeholder="Matricola">
+        <br><br>
+
+        Regione
+        <br>
+        <select name="regione" title="Regione">
+            <option value=""></option>
+            <option value="1">Regione1</option>
+            <option value="2">Regione2</option>
+            <option value="3">Regione3</option>
+            <option value="4">Regione4</option>
+        </select>
+        <br><br>
+
+        email
+        <br>
+        <input name="email" type="email" maxlength="30" size="30" placeholder="email">
+        <br><br>
+
+        Telefono
+        <br>
+        <input name="telefono" type="tel" maxlength="15" size="15" placeholder="Telefono">
+        <br><br>
+
+        Richieste particolari
+        <br>
+        <textarea cols="60" rows="12" placeholder="Note"></textarea>
+        <br><br>
+
+
+        <input type="submit" value="Invia">
+        <input type="reset" value="Reset">
+    </p>
+</form>
+</body>
+</html>

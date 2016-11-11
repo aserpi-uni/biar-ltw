@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ese2.es2</title>
+    <script language="JavaScript" type="text/javascript">
+        function checkCap() {
+            var cap = document.registrazione.cap.value.toString().length == 5;
+            if (!cap) alert("Il CAP deve essere composto da cinque numeri");
+            return cap;
+        }
+
+        function checkNomeCognome() {
+            var nomeCognome = !parseInt(document.registrazione.nomeCognome.value);
+            if (!nomeCognome) alert("Il campo non può essere un numero");
+            return nomeCognome;
+        }
+
+        function checkRegistrazione() {
+            var res = document.registrazione.nomeCognome.value != "" &&
+                    document.registrazione.sesso.value != "" &&
+                    document.registrazione.ateneo.value != "" &&
+                    ((!document.registrazione.studLav.checked) ||
+                        document.registrazione.descrLav.value != "");
+            if(!res) alert("i dati non sono stati inseriti correttamente");
+            return res;
+        }
+    </script>
+</head>
+<body>
+<form title="es2" action="" method="post" name="registrazione" onsubmit="return checkRegistrazione();">
+    <p>
+        Cognome, nome
+        <br>
+        <input name="nomeCognome" type="text" maxlength="50" size="50" placeholder="Cognome, nome" onchange="checkNomeCognome()">
+        <br><br>
+
+        Sesso
+        <br><input type="radio" title="sesso" name="sesso" value="maschio">Maschio
+        <br><input type="radio" title="sesso" name="sesso" value="femmina">Femmina
+        <br><br>
+
+        Ateneo
+        <br>
+        <select name="ateneo" title="Ateneo">
+            <option value=""></option>
+            <option value="1">Sapienza</option>
+            <option value="2">Tor Vergata</option>
+            <option value="3">Roma 3</option>
+        </select>
+        <br><br>
+
+        CAP
+        <br>
+        <input name="cap" type="text" maxlength="5" size="5" placeholder="CAP" onchange="return checkCap();">
+        <br><br>
+
+        <input name="studLav" type="checkbox" title="studlav">
+        Studente lavoratore
+        <br><br>
+
+        Lavoro
+        <br>
+        <input name="descrLav" type="text" maxlength="80" size="80" placeholder="lavoro">
+        <br><br>
+
+        <input type="submit" value="Invia">
+        <input type="reset" value="Reset">
+    </p>
+</form>
+</body>
+</html>
