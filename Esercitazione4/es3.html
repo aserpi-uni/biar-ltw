@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ese4.es2</title>
+    <script>
+        function caricaDocumento(e) {
+            var httpRequest = new XMLHttpRequest();
+            httpRequest.onreadystatechange = gestisciResponse;
+            httpRequest.open("GET", e.id + ".html", true);
+            httpRequest.previousTarget = e;
+            httpRequest.send();
+        }
+
+        function gestisciResponse(e) {
+            if (e.target.readyState == XMLHttpRequest.DONE && e.target.status == 200) {
+                document.getElementById(e.target.previousTarget.getAttribute("id") + "Doc").innerHTML =
+                        e.target.responseText;
+            }
+        }
+    </script>
+</head>
+<body>
+<div>
+    <h4 id="h1" onmouseover="caricaDocumento(this)">
+        Documento 1
+    </h4>
+    <div id="h1Doc"></div>
+    <h4 id="h2" onmouseover="caricaDocumento(this)">
+        Documento 2
+    </h4>
+    <div id="h2Doc"></div>
+    <h4 id="h3" onmouseover="caricaDocumento(this)">
+        Documento 3
+    </h4>
+    <div id="h3Doc"></div>
+    <h4 id="h4" onmouseover="caricaDocumento(this)">
+        Documento 4
+    </h4>
+    <div id="h4Doc"></div>
+</div>
+</body>
+</html>
