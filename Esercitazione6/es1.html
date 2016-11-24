@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ese6.es1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#1").click(function () {
+                $(".head").text("");
+            });
+        });
+
+        $(document).ready(function(){
+            $("#2").click(function () {
+                $("#div1").css("color", "red");
+            });
+        });
+
+        $(document).ready(function(){
+            $("#3").mouseenter(function () {
+                $("#div2").text("abc");
+            })
+        });
+    </script>
+</head>
+<body>
+<div>
+    <button id="1">Bottone 1</button>
+    <button id="2">Bottone 2</button>
+    <button id="3">Bottone 3</button>
+</div>
+<h1 class="head">ProvaH1/1</h1>
+<h1 class="head">ProvaH1/2</h1>
+<h1 class="head">ProvaH1/3</h1>
+<div id="div1">ProvaDiv1</div>
+<div id="div2">ProvaDiv2</div>
+</body>
+</html>
